@@ -1,7 +1,7 @@
 
 <table class="table table-bordered table-striped table-hover table-reponsive scroll">
     <thead>
-         <a href="<?php echo $block->getBaseUrl(); ?>blog/index/create" class="action primary">Create New Post</a>
+         <a href="<?= $block->getBaseUrl(); ?>blog/index/create" class="action primary">Create New Post</a>
         <tr>
             <th>Id</th>
             <th>Name</th>
@@ -17,8 +17,8 @@
     <?php
     $posts = $block->getPosts();
 
-    foreach ($posts as $post) :
-        ?>
+    foreach ($posts as $post) : ?>
+
         <tr style="border: 1px solid #000000; text-align: left; padding: 8px;">
             <td><?php echo $post->getId(); ?></td>
             <td><?php echo $post->getName(); ?></td>
@@ -27,13 +27,12 @@
             <td><?php echo $post->getIntroduce(); ?></td>
             <td><?php echo $post->getCreatedAt(); ?></td>
             <td><?php echo $post->getUpdatedAt(); ?></td>
-        ?>      
             <td>
                 <a href="/magento/blog/index/edit/post_id/<?= $post->getId() ?>">Edit</a>
-            </td>;
+            </td>
             <td>
                 <a href="/magento/blog/index/delete/post_id/<?= $post->getId() ?>">Delete</a>
-            </td>";
+            </td>
         </tr>
     <?php endforeach; ?>
     </tbody>
