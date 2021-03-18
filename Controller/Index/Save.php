@@ -40,15 +40,15 @@ class Save extends \Magento\Framework\App\Action\Action
 		if (isset($_POST['editbtn'])) {
 			$post->setId($_POST['editbtn']);
 			$post->setName($_POST['name']);
-			$post->setUrlKey($_POST['url']);
-			$post->setContent($_POST['content']);
-			$post->setStatus($_POST['status']);
+			$post->setAddress($_POST['address']);
+			$post->setCountry($_POST['country']);
+			$post->setIntroduce($_POST['introduce']);
 			$post->setUpdatedAt(date('Y-m-d H:i:s'));
 		} elseif (isset($_POST['createbtn'])) {
 			$post->setName($_POST['name']);
-			$post->setUrlKey($_POST['url']);
-			$post->setContent($_POST['content']);
-			$post->setStatus($_POST['status']);
+			$post->setAddress($_POST['address']);
+			$post->setCountry($_POST['country']);
+			$post->setIntroduce($_POST['introduce']);
 			$post->setCreatedAt(date('Y-m-d H:i:s'));
 			$post->setUpdatedAt(date('Y-m-d H:i:s'));
 		}

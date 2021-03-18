@@ -2,19 +2,19 @@
 	<form method='POST' action="/magento/blog/index/save">
 	    <div class="form-group">
 	        <label for="name">Name</label>
-	        <input type="text" class="form-control" id="name" placeholder="Enter a name" name="name" value="<?php $post = $block->getPost(); echo $post->getName(); ?>">
+	        <input type="text" class="form-control" id="name" placeholder="Enter a name" name="name" value="<?php $post = $block->getPost(); if (isset($post['name'])) echo $post->getName(); ?>">
 	    </div>
 	    <div class="form-group">
-	        <label for="phone">Url Key</label>
-	        <input type="text" class="form-control" id="url" placeholder="Enter a phone" name="url" value="<?php if (isset($post['url_key'])) echo $post->getUrlKey();?>">
+	        <label for="address">Address</label>
+	        <input type="text" class="form-control" id="address" placeholder="Enter address" name="address" value="<?php if (isset($post['address'])) echo $post->getAddress();?>">
 	    </div>
 	    <div class="form-group">
-	        <label for="organization">Content</label>
-	        <input type="text" class="form-control" id="content" placeholder="Enter a organization" name="content" value="<?php if (isset($post['content'])) echo $post->getContent();?>">
+	        <label for="country">Country</label>
+	        <input type="text" class="form-control" id="country" placeholder="Enter country" name="country" value="<?php if (isset($post['country'])) echo $post->getCountry();?>">
 	    </div>
 	    <div class="form-group">
-	        <label for="phone">Status</label>
-	        <input type="text" class="form-control" id="status" placeholder="Enter a phone" name="status" value="<?php if (isset($post['status'])) echo $post->getStatus();?>">
+	        <label for="introduce">Introduce</label>
+	        <input type="text" class="form-control" id="introduce" placeholder="Enter introduce" name="introduce" value="<?php if (isset($post['introduce'])) echo $post->getIntroduce();?>">
 	    </div>
 	    <button type="submit" class="btn btn-primary" name="editbtn" value="<?php if (isset($post['post_id'])) echo $post->getId();?>">Submit</button>
 	</form>
